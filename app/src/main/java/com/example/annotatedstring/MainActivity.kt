@@ -37,18 +37,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TextWithLink(context = this)
+            TextWithLink()
         }
     }
 }
 
 @Composable
-fun TextWithLink(context: Context){
-
+fun TextWithLink(){
 
     val linkStyle = SpanStyle(color = Color.Blue, textDecoration = TextDecoration.Underline)
     val mContext = LocalContext.current
-
 
     val annotatedString = buildAnnotatedString {
         withLink(LinkAnnotation.Clickable(tag = "",
